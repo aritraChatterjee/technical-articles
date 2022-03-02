@@ -10,7 +10,7 @@ import com.codesandwires.tutorial.pattern.architecture.hexagonal.domain.reposito
 public class FileDataSource implements BookRepository {
 
     @Override
-    public List<Book> getBooks() {
+    public List<Book> getAllBooks() {
         return getBooksFromFile().stream()
             .map(this::mapBookStringToBook)
             .collect(Collectors.toList());

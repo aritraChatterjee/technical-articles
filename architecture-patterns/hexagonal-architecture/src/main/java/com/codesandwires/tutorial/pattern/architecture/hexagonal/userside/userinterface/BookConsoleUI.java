@@ -13,7 +13,7 @@ public class BookConsoleUI {
     }
 
     public void showBooks() {
-        List<Book> books = bookService.getBooks();
+        List<Book> books = bookService.getBookList();
         printBooksToConsole(books);
     }
 

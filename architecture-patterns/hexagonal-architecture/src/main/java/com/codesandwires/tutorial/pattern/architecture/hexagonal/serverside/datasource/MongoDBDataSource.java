@@ -11,7 +11,7 @@ import com.google.gson.JsonObject;
 public class MongoDBDataSource implements BookRepository {
 
     @Override
-    public List<Book> getBooks() {
+    public List<Book> getAllBooks() {
         return getAllBookDocuments().stream()
             .map(this::mapBookJsonObjectToBook)
             .collect(Collectors.toList());

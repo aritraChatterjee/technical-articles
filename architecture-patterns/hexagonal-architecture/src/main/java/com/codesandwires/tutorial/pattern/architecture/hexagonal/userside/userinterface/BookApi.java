@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 
 @WebServlet(urlPatterns = "/books", name = "BookApi")
 public class BookApi extends HttpServlet {
-    private IBookService bookService;
+    private final IBookService bookService;
 
     public BookApi(IBookService bookService) {
         this.bookService = bookService;
@@ -23,7 +23,7 @@ public class BookApi extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        List<Book> books = bookService.getBooks();
+        List<Book> books = bookService.getBookList();
         String bookListString = new Gson().toJson(books);
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
